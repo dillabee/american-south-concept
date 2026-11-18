@@ -80,6 +80,30 @@ nav a{text-decoration:none;opacity:.85;white-space:nowrap}nav a:hover{opacity:1;
 .site .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(11,37,69,.7))}
 .site{transition:box-shadow .3s,transform .3s,opacity .75s}.site:hover{box-shadow:0 10px 28px rgba(11,37,69,.16)}
 .inv .card{padding:0;overflow:hidden}.inv .card .im{height:140px;overflow:hidden;position:relative}.inv .card .im img{width:100%;height:100%;object-fit:cover;transition:transform 1s}.inv .card:hover .im img{transform:scale(1.08)}.inv .card .tx2{padding:18px 20px 20px}
+.caps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.caps .card h3{font-size:16px}.caps .card .n{font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.fd{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.fdc{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 26px rgba(11,37,69,.08)}
+.fdh{background:var(--navy);color:#fff;padding:13px 18px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px}
+.fdh small{font-weight:500;opacity:.8;font-size:12px}
+.fdb{padding:14px 16px;display:flex;flex-direction:column;gap:9px;height:400px;overflow:auto;background:var(--sand);scroll-behavior:auto}
+.fdb .msg{animation:up .4s cubic-bezier(.2,.7,.2,1) both}
+.msg.c{background:var(--teal);color:#fff;align-self:flex-end}
+.msg.n{align-self:center;background:#e6f4f1;color:#0b5c5c;font-size:12px;font-weight:600;border-radius:999px;padding:5px 12px}
+.fdf{padding:11px 16px;border-top:1px solid var(--line);display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--mute)}
+.wave{display:flex;gap:3px;align-items:center;height:22px}
+.wave i{width:3px;height:5px;background:var(--lime);border-radius:2px}
+.wave.on i{animation:wv .8s ease-in-out infinite}.wave i:nth-child(2){animation-delay:.1s}.wave i:nth-child(3){animation-delay:.2s}.wave i:nth-child(4){animation-delay:.3s}.wave i:nth-child(5){animation-delay:.15s}.wave i:nth-child(6){animation-delay:.05s}
+@keyframes wv{50%{height:20px}}
+.sum{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.sum .hd{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:700;color:var(--navy);margin-bottom:12px}
+.sum .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 20px}
+.sum .f{opacity:.22;transition:opacity .5s,transform .5s;transform:translateY(4px);border-left:3px solid var(--line);padding-left:10px}
+.sum .f.on{opacity:1;transform:none;border-left-color:var(--lime)}
+.sum .f span{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.sum .f b{font-size:13.5px;font-weight:600}
+.rules{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.rules span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:12.5px}
 html.still *,html.still *:before,html.still *:after{animation:none !important;transition:none !important}
 html.still .rv{opacity:1;transform:none}html.still .ind img{clip-path:none}html.still .ind .bar2{width:54px}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none !important;transition:none !important}.rv{opacity:1;transform:none}.ind img{clip-path:none}}
@@ -169,14 +193,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 #askform{display:flex;border-top:1px solid var(--line);grid-template-columns:none;max-width:none;gap:0}
 #askform input{border:0;border-radius:0;padding:12px;flex:1}
 #askform button{border:0;background:var(--teal);color:#fff;padding:0 16px;font-weight:700;cursor:pointer}
-@media(max-width:900px){#arcs{display:none}.inds{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr;row-gap:26px}.flowline{display:none}.kpis,.why{grid-template-columns:repeat(2,1fr)}.mapgrid,.cmp{grid-template-columns:1fr}.sites,.inv{grid-template-columns:1fr}nav{display:none}form{grid-template-columns:1fr}.bar{grid-template-columns:90px 1fr 60px}.tile{font-size:13px}.tile small{display:none}}
+@media(max-width:900px){.caps{grid-template-columns:1fr 1fr}.fd{grid-template-columns:1fr}.sum .grid{grid-template-columns:1fr 1fr}#arcs{display:none}.inds{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr;row-gap:26px}.flowline{display:none}.kpis,.why{grid-template-columns:repeat(2,1fr)}.mapgrid,.cmp{grid-template-columns:1fr}.sites,.inv{grid-template-columns:1fr}nav{display:none}form{grid-template-columns:1fr}.bar{grid-template-columns:90px 1fr 60px}.tile{font-size:13px}.tile small{display:none}}
 </style>
 </head>
 <body>
 <div class="demo">Concept demonstration prepared by Camoin Associates for the Southern Economic Development Council. Figures are indicative placeholders and site listings are samples. Not a live SEDC website.</div>
 <header><div class="wrap">
   <a class="logo" href="#top">The American <span>South</span></a>
-  <nav><a href="#why">Why the South</a><a href="#industries">Industries</a><a href="#states">State Profiles</a><a href="#compare">Compare</a><a href="#sites">Sites</a><a href="#investors">International Investors</a><a href="#connect">Connect</a></nav>
+  <nav><a href="#why">Why the South</a><a href="#industries">Industries</a><a href="#states">State Profiles</a><a href="#compare">Compare</a><a href="#sites">Sites</a><a href="#investors">International Investors</a><a href="#frontdesk">Front Desk</a><a href="#connect">Connect</a></nav>
 </div></header>
 
 <div class="hero" id="top"><div class="bg"></div><svg id="arcs" viewBox="0 0 520 300" aria-hidden="true"></svg><div class="wrap">
@@ -270,7 +294,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </ul>
 </div></section>
 
-<section class="alt" id="pipeline"><div class="wrap">
+<section class="alt" id="frontdesk"><div class="wrap">
+  <div class="eyebrow" style="color:var(--teal)">Front Desk Agent</div>
+  <h2>A front desk for the region that answers day and night</h2>
+  <p class="sub">SEDC has a small staff and prospects in every time zone. The Front Desk Agent answers on the website and on a dedicated phone line from one approved knowledge base, qualifies the inquiry, and sends the SEDC team a summary. It adds capacity during mission weeks, evenings and weekends without adding headcount.</p>
+  <div class="caps">
+    <div class="card"><div class="n">Chat</div><h3>Answers on the site</h3><p>Plain-language answers about states, sites, workforce and energy, with a link to the page behind each one.</p></div>
+    <div class="card"><div class="n">Voice</div><h3>Answers the phone</h3><p>An inbound line for callers who would rather talk, staffed by an AI agent trained on the same material.</p></div>
+    <div class="card"><div class="n">Qualify</div><h3>Asks the right questions</h3><p>Project type, timing, jobs, building and utility needs, and other locations under review.</p></div>
+    <div class="card"><div class="n">Route</div><h3>Hands off to people</h3><p>Every conversation goes to SEDC with contact details at the top and the states to introduce.</p></div>
+  </div>
+  <div class="fd">
+    <div class="fdc"><div class="fdh"><span>Ask the American South</span><small>Website chat</small></div>
+      <div class="fdb" id="chatdemo"></div>
+      <div class="fdf"><button class="btn sm" onclick="if(!$('panel').classList.contains('open'))togglePanel()">Try it yourself</button><span>Scripted demo with indicative data</span></div>
+    </div>
+    <div class="fdc"><div class="fdh"><span>American South Front Desk line</span><small id="calltime">Inbound call 00:00</small></div>
+      <div class="fdb" id="calldemo"></div>
+      <div class="fdf"><button class="btn sm" id="playcall" onclick="playCall()">Play sample call</button><div class="wave" id="wave"><i></i><i></i><i></i><i></i><i></i><i></i></div><span>Sample call scripted for this concept. A dedicated number is assigned at setup.</span></div>
+    </div>
+  </div>
+  <div class="sum"><div class="hd"><span>Call summary sent to the SEDC team <span class="note">(sample)</span></span><span class="note" id="sumstate">Waiting for the call to finish</span></div><div class="grid" id="sumgrid"></div></div>
+  <div class="rules"><span>Says it is an AI agent</span><span>Never invents figures</span><span>Does not quote incentives or terms</span><span>Inbound only</span><span>Transfers to a person on request</span><span>Transcripts and summaries go to SEDC</span></div>
+</div></section>
+
+<section id="pipeline"><div class="wrap">
   <div class="eyebrow" style="color:var(--teal)">Behind the site</div>
   <h2>What happens after a company visits</h2>
   <p class="sub">Most companies researching a location never fill out a form. The site is instrumented so SEDC can see that research and act on it.</p>
@@ -289,7 +337,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </div></section>
 
-<section id="connect"><div class="wrap">
+<section class="alt" id="connect"><div class="wrap">
   <div class="eyebrow" style="color:var(--teal)">Connect</div>
   <h2>One inquiry, routed to the right people</h2>
   <p class="sub">Your message goes to SEDC and to the states you select. If you have no preference, it is shared with all member states on equal terms.</p>
@@ -402,7 +450,7 @@ function answer(q){const t=q.toLowerCase();
   return "I can only answer from SEDC-approved content, and that question is outside it. I will pass it to the SEDC team if you leave your details in the Connect form.";}
 function say(c,t){const d=document.createElement("div");d.className="msg "+c;d.textContent=t;$("log").appendChild(d);$("log").scrollTop=1e6;}
 function ask(q){if(!q.trim())return;say("u",q);setTimeout(()=>say("a",answer(q)),250);}
-function togglePanel(){$("panel").classList.toggle("open");if(!$("log").children.length)say("a","Hello. I answer questions about the American South from the content on this site. This is a scripted demo with indicative data.");}
+function togglePanel(){$("panel").classList.toggle("open");if(!$("log").children.length)say("a","Hello. I answer questions about the American South from the content on this site. Conversations are shared with the SEDC team so someone can follow up. This is a scripted demo with indicative data.");}
 $("askform").onsubmit=e=>{e.preventDefault();ask($("q").value);$("q").value="";};
 ["Which states have certified sites over 500 acres with rail?","Where is industrial power cheapest?","Tell me about Tennessee","Compare Georgia and South Carolina"].forEach(s=>{const b=document.createElement("button");b.textContent=s;b.onclick=()=>ask(s);$("sugg").appendChild(b);});
 function count(){document.querySelectorAll("[data-count]").forEach(el=>{const n=+el.dataset.count;let i=0;const t=setInterval(()=>{i+=Math.ceil(n/30);if(i>=n){i=n;clearInterval(t);}el.textContent=i;},25);});}
@@ -416,14 +464,41 @@ function arcs(){const o=[60,238],T=[["Toronto",135,120],["London",255,42],["Hann
   $("arcs").innerHTML=h;}
 function tick(){const N=["European automation supplier selects a Southern state for its first US assembly plant, 180 jobs","Medical device manufacturer announces a 250,000 square foot expansion","Aerospace components firm opens an engineering center at a regional airport","Battery materials producer breaks ground on a 600 acre certified site","Food ingredients company adds a second production line, 95 jobs"];
   const t=N.map(x=>`<span><b>Sample</b>${x}</span>`).join("");$("tick").innerHTML=t+t;}
-function chk(){const h=innerHeight;document.querySelectorAll(".rv:not(.in)").forEach(el=>{const r=el.getBoundingClientRect();if(r.top<h*0.92&&r.bottom>0)el.classList.add("in");});}
+const CALL=[["a","Thank you for calling the American South Front Desk. I am an AI assistant for the Southern Economic Development Council, and this call may be summarized for our team. How can I help?"],
+["c","Hello. We are a UK satellite components company. We met your delegation at SpaceCom and we are looking at a first US production site."],
+["a","Glad you called. So I can point you to the right states, may I ask a few questions? Would this be a new facility or a move of existing operations?"],
+["c","New. Light manufacturing and testing, about 60,000 square feet."],
+["a","What timing are you working toward, and roughly how many jobs?"],
+["c","A decision by autumn and operating in 2028. Around 85 jobs in the first three years."],
+["a","Any requirements for the building, utilities or transport?"],
+["c","Cleanroom space, reliable power, and within an hour of a launch or test range."],
+["a","Are other locations under consideration?"],
+["c","Florida and Texas so far. We are open to others."],
+["a","Thank you. I cannot quote incentives, but the state teams can. May I take your name and email so SEDC can introduce you to Florida, Texas and any other state that fits?"],
+["n","Contact details captured"],
+["a","Thank you. The SEDC team will follow up with introductions. Is there anything else I can answer now?"]];
+const SUM=[["Caller type","Company, prospect"],["Company profile","UK satellite components manufacturer"],["Project","New US facility"],["Operation","Light manufacturing and testing"],["Timeline","Decision autumn 2027, operating 2028"],["Jobs","About 85 in three years"],["Building needs","60,000 sq ft with cleanroom"],["Utilities and transport","Reliable power; within an hour of a launch or test range"],["Other locations","Florida, Texas"],["Driver","Met the delegation at SpaceCom"],["Follow-up priority","High"],["Route to","SEDC, Florida, Texas"]];
+const CHATDEMO=["Which states have certified sites over 500 acres with rail?","Where is industrial power cheapest?"];
+const STILL=document.documentElement.classList.contains("still");
+let callT=[],fdStarted=false;
+function fdMsg(box,c,t){const d=document.createElement("div");d.className="msg "+c;d.textContent=t;box.appendChild(d);box.scrollTop=1e6;}
+function sumInit(){$("sumgrid").innerHTML=SUM.map(x=>`<div class="f"><span>${x[0]}</span><b>${x[1]}</b></div>`).join("");}
+function playCall(){callT.forEach(clearTimeout);callT=[];const box=$("calldemo");box.innerHTML="";sumInit();$("sumstate").textContent="Waiting for the call to finish";$("playcall").textContent="Replay sample call";
+  let t=300,sec=0;CALL.forEach(([c,x],i)=>{const dur=c==="n"?900:Math.min(4200,900+x.length*26);
+    callT.push(setTimeout(()=>{fdMsg(box,c,x);$("wave").classList.toggle("on",c!=="n");sec+=Math.round(dur/1000*2.2);$("calltime").textContent="Inbound call "+String(Math.floor(sec/60)).padStart(2,"0")+":"+String(sec%60).padStart(2,"0");},STILL?0:t));t+=dur;});
+  callT.push(setTimeout(()=>{$("wave").classList.remove("on");$("sumstate").textContent="Sent to SEDC with contact details at the top";
+    document.querySelectorAll("#sumgrid .f").forEach((f,i)=>callT.push(setTimeout(()=>f.classList.add("on"),STILL?0:i*160)));},STILL?0:t+300));}
+function playChat(){const box=$("chatdemo");box.innerHTML="";fdMsg(box,"a","Hello. I answer questions about the American South from the content on this site. Conversations are shared with the SEDC team so someone can follow up.");
+  let t=900;CHATDEMO.forEach(q=>{setTimeout(()=>fdMsg(box,"u",q),STILL?0:t);t+=1300;setTimeout(()=>fdMsg(box,"a",answer(q)),STILL?0:t);t+=3200;});}
+function fdStart(){if(fdStarted)return;const r=$("frontdesk").getBoundingClientRect();if(STILL||(r.top<innerHeight*0.6&&r.bottom>0)){fdStarted=true;playChat();playCall();}}
+function chk(){fdStart();const h=innerHeight;document.querySelectorAll(".rv:not(.in)").forEach(el=>{const r=el.getBoundingClientRect();if(r.top<h*0.92&&r.bottom>0)el.classList.add("in");});}
 addEventListener("scroll",chk,{passive:true});addEventListener("resize",chk);
 function reveal(){
   document.querySelectorAll("section h2,section .sub,.why .card,.inv .card,.site,.fs,.feed,.cmp,.mapgrid>*,form").forEach(el=>{if(el.classList.contains("rv"))return;el.classList.add("rv");
     const sib=[...el.parentNode.children].indexOf(el);if(el.matches(".card,.site,.fs"))el.style.setProperty("--d",(sib%4)*0.09+"s");});
   chk();}
 const _sites=sites;sites=function(){_sites();reveal();};
-tiles();profile();opts();bars();inds();arcs();tick();sites();count();
+tiles();profile();opts();bars();inds();arcs();tick();sumInit();sites();count();
 </script>
 </body>
 </html>
