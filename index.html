@@ -416,10 +416,12 @@ function arcs(){const o=[60,238],T=[["Toronto",135,120],["London",255,42],["Hann
   $("arcs").innerHTML=h;}
 function tick(){const N=["European automation supplier selects a Southern state for its first US assembly plant, 180 jobs","Medical device manufacturer announces a 250,000 square foot expansion","Aerospace components firm opens an engineering center at a regional airport","Battery materials producer breaks ground on a 600 acre certified site","Food ingredients company adds a second production line, 95 jobs"];
   const t=N.map(x=>`<span><b>Sample</b>${x}</span>`).join("");$("tick").innerHTML=t+t;}
-let io;function reveal(){if(!io)io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
+function chk(){const h=innerHeight;document.querySelectorAll(".rv:not(.in)").forEach(el=>{const r=el.getBoundingClientRect();if(r.top<h*0.92&&r.bottom>0)el.classList.add("in");});}
+addEventListener("scroll",chk,{passive:true});addEventListener("resize",chk);
+function reveal(){
   document.querySelectorAll("section h2,section .sub,.why .card,.inv .card,.site,.fs,.feed,.cmp,.mapgrid>*,form").forEach(el=>{if(el.classList.contains("rv"))return;el.classList.add("rv");
     const sib=[...el.parentNode.children].indexOf(el);if(el.matches(".card,.site,.fs"))el.style.setProperty("--d",(sib%4)*0.09+"s");});
-  document.querySelectorAll(".rv:not(.in)").forEach(el=>io.observe(el));}
+  chk();}
 const _sites=sites;sites=function(){_sites();reveal();};
 tiles();profile();opts();bars();inds();arcs();tick();sites();count();
 </script>
