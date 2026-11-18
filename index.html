@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The American South | Concept site for SEDC</title>
+<style>
+:root{--navy:#0b2545;--navy2:#13315c;--teal:#0e8c8c;--green:#2e9e5b;--lime:#a6d64f;--sand:#f6f3ec;--ink:#1c2733;--mute:#5d6b7a;--line:#dfe4ea;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.5}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.demo{background:#fff4c2;color:#5a4500;font-size:13px;text-align:center;padding:7px 16px;border-bottom:1px solid #ecd97a}
+header{position:sticky;top:0;z-index:20;background:rgba(11,37,69,.97);color:#fff}
+header .wrap{display:flex;align-items:center;gap:24px;height:62px}
+.logo{font-weight:800;letter-spacing:.06em;font-size:15px;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.logo span{color:var(--lime)}
+nav{display:flex;gap:20px;margin-left:auto;font-size:14px;overflow-x:auto}
+nav a{text-decoration:none;opacity:.85;white-space:nowrap}nav a:hover{opacity:1;color:var(--lime)}
+.btn{display:inline-block;background:var(--lime);color:var(--navy);font-weight:700;border:0;border-radius:6px;padding:11px 18px;font-size:14px;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,#0d5c63 100%);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;border:70px solid rgba(166,214,79,.10)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);font-weight:700}
+h1{font-size:clamp(32px,5vw,54px);line-height:1.08;margin:12px 0 16px;max-width:780px;font-weight:800}
+.hero p.lead{font-size:18px;max-width:640px;opacity:.9;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px;position:relative;z-index:1}
+.kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:16px}
+.kpi b{display:block;font-size:30px;font-weight:800;color:var(--lime);font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;opacity:.85}
+.event{background:var(--teal);color:#fff;font-size:14px}
+.event .wrap{display:flex;gap:14px;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.event a{font-weight:700}
+section{padding:64px 0}
+section.alt{background:var(--sand)}
+h2{font-size:30px;margin:6px 0 10px;color:var(--navy);line-height:1.15}
+.sub{color:var(--mute);max-width:720px;margin:0 0 28px}
+.src{font-size:12px;color:var(--mute);margin-top:10px}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px}
+.card h3{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.card p{margin:0;font-size:14px;color:var(--mute)}
+.card .n{font-size:26px;font-weight:800;color:var(--teal)}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:start}
+.tiles{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.tile{aspect-ratio:1/1;border:0;border-radius:8px;background:var(--navy2);color:#fff;font-weight:800;font-size:16px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .12s,background .12s}
+.tile small{font-weight:500;font-size:10px;opacity:.75}
+.tile:hover{background:var(--teal);transform:translateY(-2px)}
+.tile.on{background:var(--lime);color:var(--navy)}
+.tile.wide{grid-column:span 2;aspect-ratio:auto}
+.layers{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer;color:var(--ink)}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.profile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;min-height:420px}
+.profile h3{font-size:26px;margin:0;color:var(--navy)}
+.profile .pos{color:var(--mute);margin:6px 0 16px;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.stat{background:var(--sand);border-radius:8px;padding:10px 12px}
+.stat b{display:block;font-size:20px;color:var(--teal);font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px}
+.tag{background:#e6f4f1;color:#0b5c5c;border-radius:4px;padding:3px 8px;font-size:12px;font-weight:600}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:700;margin-top:10px}
+.profile p{margin:4px 0 0;font-size:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn.sm{padding:8px 13px;font-size:13px}.btn.line{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.cmp{display:grid;grid-template-columns:260px 1fr;gap:28px}
+.cmp select{width:100%;padding:9px;border:1px solid var(--line);border-radius:6px;font-size:14px;margin-bottom:10px;background:#fff}
+.bars{display:grid;gap:18px}
+.metric h4{margin:0 0 8px;font-size:14px;color:var(--navy)}
+.bar{display:grid;grid-template-columns:120px 1fr 70px;align-items:center;gap:10px;font-size:13px;margin:4px 0}
+.track{background:#e8ecf1;border-radius:4px;height:14px;overflow:hidden}
+.fill{height:100%;background:var(--teal);border-radius:4px;transition:width .4s}
+.bar:nth-child(3) .fill{background:var(--green)}.bar:nth-child(4) .fill{background:var(--navy2)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.filters select,.filters label{font-size:14px}
+.filters select{padding:8px;border:1px solid var(--line);border-radius:6px;background:#fff}
+.sites{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.site{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.site .ph{height:86px;background:linear-gradient(120deg,#13315c,#0e8c8c);color:#fff;padding:12px 14px;font-size:12px;display:flex;justify-content:space-between;align-items:flex-end}
+.site .bd{padding:14px}
+.site h3{margin:0 0 4px;font-size:16px;color:var(--navy)}
+.site dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:8px 0 0;font-size:13px}
+.site dt{color:var(--mute)}.site dd{margin:0}
+.badge{background:var(--lime);color:var(--navy);border-radius:4px;padding:2px 7px;font-weight:700;font-size:11px}
+.inv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.news li{margin:0 0 10px;font-size:14px}.news{padding-left:18px;margin:0}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:760px}
+form input,form select,form textarea{padding:10px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:14px;width:100%}
+form textarea,form .full{grid-column:1/-1}
+.note{font-size:13px;color:var(--mute)}
+footer{background:var(--navy);color:#cfd8e3;font-size:13px;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+#ask{position:fixed;right:20px;bottom:20px;z-index:30}
+#askbtn{background:var(--lime);color:var(--navy);border:0;border-radius:999px;padding:13px 18px;font-weight:800;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:14px}
+#panel{display:none;width:360px;max-width:calc(100vw - 40px);height:480px;max-height:calc(100vh - 110px);background:#fff;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.3);overflow:hidden;flex-direction:column;margin-bottom:10px}
+#panel.open{display:flex}
+#panel header{position:static;background:var(--navy);padding:12px 16px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;height:auto}
+#panel header button{background:none;border:0;color:#fff;font-size:18px;cursor:pointer}
+#log{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--sand)}
+.msg{max-width:88%;padding:9px 12px;border-radius:10px;font-size:13.5px;white-space:pre-line}
+.msg.a{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.msg.u{background:var(--navy);color:#fff;align-self:flex-end}
+#sugg{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;border-top:1px solid var(--line)}
+#sugg button{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 9px;cursor:pointer}
+#askform{display:flex;border-top:1px solid var(--line);grid-template-columns:none;max-width:none;gap:0}
+#askform input{border:0;border-radius:0;padding:12px;flex:1}
+#askform button{border:0;background:var(--teal);color:#fff;padding:0 16px;font-weight:700;cursor:pointer}
+@media(max-width:900px){.kpis,.why{grid-template-columns:repeat(2,1fr)}.mapgrid,.cmp{grid-template-columns:1fr}.sites,.inv{grid-template-columns:1fr}nav{display:none}form{grid-template-columns:1fr}.bar{grid-template-columns:90px 1fr 60px}.tile{font-size:13px}.tile small{display:none}}
+</style>
+</head>
+<body>
+<div class="demo">Concept demonstration prepared by Camoin Associates for the Southern Economic Development Council. Figures are indicative placeholders and site listings are samples. Not a live SEDC website.</div>
+<header><div class="wrap">
+  <a class="logo" href="#top">The American <span>South</span></a>
+  <nav><a href="#why">Why the South</a><a href="#states">State Profiles</a><a href="#compare">Compare</a><a href="#sites">Sites</a><a href="#investors">International Investors</a><a href="#connect">Connect</a></nav>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+  <div class="eyebrow">17 states and the District of Columbia</div>
+  <h1>One region. Eighteen ways into the US market.</h1>
+  <p class="lead">Compare states, find certified sites, and reach the right economic development team. Every figure on this site shows its source and date.</p>
+  <div class="cta"><a class="btn" href="#states">Explore the states</a><a class="btn ghost" href="#sites">Find a site</a></div>
+  <div class="kpis">
+    <div class="kpi"><b data-count="138">0</b><span>million residents (indicative)</span></div>
+    <div class="kpi"><b data-count="67">0</b><span>million in the labor force (indicative)</span></div>
+    <div class="kpi"><b data-count="18">0</b><span>state and district profiles</span></div>
+    <div class="kpi"><b data-count="12">0</b><span>featured sites in this demo</span></div>
+  </div>
+</div></div>
+<div class="event"><div class="wrap"><span><strong>Meet the American South at SpaceCom, London.</strong> February 24 and 25, 2027, American Pavilion.</span><a href="#connect">Request a meeting</a></div></div>
+
+<section id="why"><div class="wrap">
+  <div class="eyebrow" style="color:var(--teal)">Why the South</div>
+  <h2>The case, with the numbers behind it</h2>
+  <p class="sub">Four things international companies ask about first. On the live site each card opens a page of sourced data for the region and every state.</p>
+  <div class="why">
+    <div class="card"><div class="n">01</div><h3>Market access</h3><p>Deepwater ports on the Atlantic and Gulf, Class I rail, and interstate corridors that reach most US consumers within two days by truck.</p></div>
+    <div class="card"><div class="n">02</div><h3>Workforce</h3><p>Labor force size, wages by occupation, and graduates by field for every state, from federal statistics refreshed on a schedule.</p></div>
+    <div class="card"><div class="n">03</div><h3>Energy</h3><p>Industrial electricity prices and generation mix by state, in cents per kWh, so plants can be costed before the first call.</p></div>
+    <div class="card"><div class="n">04</div><h3>Ready sites</h3><p>Certified sites and megasites nominated by members, each linked to the state or utility database of record.</p></div>
+  </div>
+</div></section>
+
+<section class="alt" id="states"><div class="wrap">
+  <div class="eyebrow" style="color:var(--teal)">State profiles</div>
+  <h2>Select a state</h2>
+  <p class="sub">Every profile follows the same template, so two states read the same way and no member is favored by design.</p>
+  <div class="mapgrid">
+    <div>
+      <div class="tiles" id="tiles"></div>
+      <div class="layers" id="layers"></div>
+      <div class="src" id="layernote">Tile map for the concept. The live site uses a geographic map with layers for ports, rail, airports and featured sites.</div>
+    </div>
+    <div class="profile" id="profile"></div>
+  </div>
+</div></section>
+
+<section id="compare"><div class="wrap">
+  <div class="eyebrow" style="color:var(--teal)">Compare</div>
+  <h2>Put states side by side</h2>
+  <p class="sub">Choose up to three. Consultants can download the table; every value links to its source.</p>
+  <div class="cmp">
+    <div><select id="c1"></select><select id="c2"></select><select id="c3"></select><div class="note">Indicative figures for layout. Live values come from the Census Bureau, Bureau of Labor Statistics and Energy Information Administration.</div></div>
+    <div class="bars" id="bars"></div>
+  </div>
+</div></section>
+
+<section class="alt" id="sites"><div class="wrap">
+  <div class="eyebrow" style="color:var(--teal)">Sites and properties</div>
+  <h2>Featured sites across the region</h2>
+  <p class="sub">Sample listings. On the live site, members nominate their priority sites and each listing links to the database of record.</p>
+  <div class="filters">
+    <select id="fstate"><option value="">All states</option></select>
+    <select id="facres"><option value="0">Any size</option><option value="100">100+ acres</option><option value="500">500+ acres</option><option value="1000">1,000+ acres</option></select>
+    <label><input type="checkbox" id="frail"> Rail served</label>
+    <label><input type="checkbox" id="fcert"> Certified</label>
+    <span class="note" id="fcount"></span>
+  </div>
+  <div class="sites" id="sitelist"></div>
+</div></section>
+
+<section id="investors"><div class="wrap">
+  <div class="eyebrow" style="color:var(--teal)">International investors</div>
+  <h2>Starting from outside the United States</h2>
+  <p class="sub">Landing pages by source market and a page for every mission and event, each with a meeting request form.</p>
+  <div class="inv">
+    <div class="card"><h3>United Kingdom</h3><p>SpaceCom, London, February 24 and 25, 2027. Space, aerospace and advanced manufacturing companies evaluating a US base.</p><div class="row"><a class="btn sm line" href="#connect">Request a meeting</a></div></div>
+    <div class="card"><h3>Germany</h3><p>Following the 2026 delegations to Hannover Messe and ILA Berlin. Guidance for manufacturers and suppliers planning US production. Deutsch verfügbar.</p><div class="row"><a class="btn sm line" href="#connect">Talk to the team</a></div></div>
+    <div class="card"><h3>SelectUSA Investment Summit</h3><p>Meet state and local economic developers from across the South in one place. Schedule time with the delegation ahead of the Summit.</p><div class="row"><a class="btn sm line" href="#connect">Schedule time</a></div></div>
+  </div>
+  <h3 style="margin:36px 0 10px;color:var(--navy)">Recent announcements <span class="note">(sample feed)</span></h3>
+  <ul class="news">
+    <li><strong>Sample:</strong> European automation supplier selects a Southern state for its first US assembly plant, 180 jobs.</li>
+    <li><strong>Sample:</strong> Medical device manufacturer announces a 250,000 square foot expansion near an interstate corridor.</li>
+    <li><strong>Sample:</strong> Aerospace components firm opens a maintenance and engineering center at a regional airport.</li>
+  </ul>
+</div></section>
+
+<section class="alt" id="connect"><div class="wrap">
+  <div class="eyebrow" style="color:var(--teal)">Connect</div>
+  <h2>One inquiry, routed to the right people</h2>
+  <p class="sub">Your message goes to SEDC and to the states you select. If you have no preference, it is shared with all member states on equal terms.</p>
+  <form id="inq" onsubmit="event.preventDefault();document.getElementById('sent').textContent='Demo only. On the live site this inquiry would be routed to SEDC and '+(document.getElementById('inqstate').value||'all member states')+'.';">
+    <input placeholder="Name" required><input placeholder="Company" required>
+    <input type="email" placeholder="Work email" required><input placeholder="Country">
+    <select id="inqstate" class="full"><option value="">No state preference</option></select>
+    <textarea rows="3" placeholder="What are you looking for? Sector, timing, site or workforce needs."></textarea>
+    <div class="full"><button class="btn" type="submit">Send inquiry</button> <span class="note" id="sent"></span></div>
+  </form>
+</div></section>
+
+<footer><div class="wrap"><span>The American South is an initiative of the Southern Economic Development Council. Concept only.</span><span>Concept by Camoin Associates | Built by ProspectEngage®</span></div></footer>
+
+<div id="ask">
+  <div id="panel"><header><span>Ask the American South</span><button aria-label="Close" onclick="togglePanel()">×</button></header>
+    <div id="log"></div>
+    <div id="sugg"></div>
+    <form id="askform"><input id="q" placeholder="Ask about states, sites or energy" autocomplete="off"><button>Send</button></form>
+  </div>
+  <button id="askbtn" onclick="togglePanel()">Ask the American South</button>
+</div>
+
+<script>
+// Indicative placeholder data for the concept. pop and lf in millions, kwh in cents.
+const S={
+AL:{n:"Alabama",c:[3,2],pop:5.1,lf:2.3,kwh:7.2,pos:"Automotive and aerospace manufacturing with a deepwater port at Mobile.",sec:["Automotive","Aerospace","Steel and metals","Shipbuilding"],anc:"Mercedes-Benz, Hyundai, Airbus (Mobile), Austal USA",log:"Port of Mobile; I-65, I-20, I-10; five Class I railroads"},
+AR:{n:"Arkansas",c:[1,1],pop:3.1,lf:1.4,kwh:6.6,pos:"Food, retail logistics and steel, on the Mississippi and Arkansas rivers.",sec:["Food processing","Steel","Logistics","Aerospace and defense"],anc:"Walmart, Tyson Foods, Big River Steel, Lockheed Martin (Camden)",log:"I-40, I-30, I-49; river ports; Class I rail"},
+FL:{n:"Florida",c:[4,3],pop:22.6,lf:11.0,kwh:8.9,pos:"Space, aviation and trade with Latin America, with 15 deepwater ports.",sec:["Space and aerospace","Aviation","Life sciences","Logistics and trade"],anc:"Kennedy Space Center, Lockheed Martin, Embraer, PortMiami, JAXPORT",log:"Seaports on both coasts; I-95, I-75, I-10; major international airports"},
+GA:{n:"Georgia",c:[4,2],pop:11.0,lf:5.3,kwh:6.9,pos:"Electric vehicles, logistics and the busiest passenger airport in the world.",sec:["Electric vehicles and batteries","Logistics","Aerospace","Food processing"],anc:"Hyundai Metaplant, Kia, Delta Air Lines, Gulfstream, Port of Savannah",log:"Port of Savannah; Hartsfield-Jackson Atlanta; I-75, I-85, I-95"},
+KS:{n:"Kansas",c:[0,0],pop:2.9,lf:1.5,kwh:7.9,pos:"Aircraft manufacturing, animal health and central US distribution.",sec:["Aerospace","Animal health","Batteries","Food and agriculture"],anc:"Spirit AeroSystems, Textron Aviation, Panasonic Energy (De Soto)",log:"I-70, I-35; BNSF and Union Pacific; Kansas City intermodal"},
+KY:{n:"Kentucky",c:[2,0],pop:4.5,lf:2.0,kwh:6.5,pos:"Vehicle and battery production with global air cargo hubs.",sec:["Automotive","Batteries","Logistics","Bourbon and food"],anc:"Toyota (Georgetown), Ford, BlueOval SK, UPS Worldport, DHL (CVG)",log:"I-65, I-75, I-64; Ohio River ports; UPS and DHL air hubs"},
+LA:{n:"Louisiana",c:[1,2],pop:4.6,lf:2.1,kwh:5.9,pos:"Energy, chemicals and bulk trade on the lower Mississippi River.",sec:["Energy and LNG","Chemicals","Maritime","Advanced manufacturing"],anc:"Port of South Louisiana, Port of New Orleans, ExxonMobil, Shell, Dow",log:"Lower Mississippi ports; I-10, I-20, I-49; six Class I railroads"},
+MD:{n:"Maryland",c:[5,0],pop:6.2,lf:3.2,kwh:9.9,pos:"Life sciences, cybersecurity and federal research next to Washington.",sec:["Life sciences","Cybersecurity","Aerospace and defense","Logistics"],anc:"Johns Hopkins, NIH, AstraZeneca, Northrop Grumman, Port of Baltimore",log:"Port of Baltimore; BWI; I-95, I-70"},
+MS:{n:"Mississippi",c:[2,2],pop:2.9,lf:1.2,kwh:6.8,pos:"Automotive, shipbuilding and aerospace testing on the Gulf Coast.",sec:["Automotive","Shipbuilding","Aerospace","Steel"],anc:"Nissan (Canton), Toyota (Blue Springs), Ingalls Shipbuilding, Stennis Space Center",log:"Port of Gulfport; I-55, I-59, I-10; Tennessee-Tombigbee Waterway"},
+MO:{n:"Missouri",c:[1,0],pop:6.2,lf:3.1,kwh:7.6,pos:"Aerospace, agricultural science and freight at the center of the country.",sec:["Aerospace and defense","Agtech and plant science","Automotive","Logistics"],anc:"Boeing (St. Louis), GM (Wentzville), Ford (Kansas City), Bayer Crop Science",log:"I-70, I-44, I-55; Mississippi and Missouri river ports; Class I rail hubs"},
+NC:{n:"North Carolina",c:[4,1],pop:10.8,lf:5.2,kwh:7.3,pos:"Biomanufacturing, batteries and research universities.",sec:["Life sciences","Batteries and EV","Aerospace","Semiconductors"],anc:"Research Triangle Park, Toyota Battery, Novo Nordisk, Honda Aircraft",log:"Ports of Wilmington and Morehead City; I-85, I-40, I-95; CLT and RDU"},
+OK:{n:"Oklahoma",c:[0,1],pop:4.1,lf:2.0,kwh:5.9,pos:"Aircraft maintenance, energy and low industrial power costs.",sec:["Aerospace and MRO","Energy","Unmanned systems","Manufacturing"],anc:"Tinker Air Force Base, American Airlines (Tulsa), Boeing (Oklahoma City)",log:"I-35, I-40, I-44; Tulsa Port of Catoosa; BNSF and Union Pacific"},
+SC:{n:"South Carolina",c:[5,2],pop:5.4,lf:2.5,kwh:6.9,pos:"Automotive and aerospace exports through the Port of Charleston.",sec:["Automotive","Aerospace","Tires and materials","Life sciences"],anc:"BMW (Spartanburg), Boeing (Charleston), Volvo Cars, Michelin",log:"Port of Charleston and inland ports at Greer and Dillon; I-85, I-26, I-95"},
+TN:{n:"Tennessee",c:[2,1],w:1,pop:7.1,lf:3.4,kwh:6.5,pos:"Vehicle production and the largest air cargo hub in the Western Hemisphere.",sec:["Automotive and EV","Logistics","Healthcare","Advanced materials"],anc:"Nissan (Smyrna), Volkswagen (Chattanooga), Ford BlueOval City, FedEx",log:"FedEx World Hub at Memphis; I-40, I-65, I-75; five Class I railroads at Memphis"},
+TX:{n:"Texas",c:[0,2],pop:30.5,lf:15.1,kwh:6.6,pos:"Semiconductors, energy and space, with the largest economy in the region.",sec:["Semiconductors","Energy","Space and aerospace","Automotive"],anc:"Samsung (Taylor), Texas Instruments, Tesla, SpaceX, Port Houston",log:"Port Houston; DFW and IAH; I-35, I-10, I-45; border crossings with Mexico"},
+VA:{n:"Virginia",c:[4,0],pop:8.7,lf:4.6,kwh:8.4,pos:"Shipbuilding, data centers and a deep-draft East Coast port.",sec:["Shipbuilding and defense","Data centers","Life sciences","Logistics"],anc:"Newport News Shipbuilding, Port of Virginia, Micron, Amazon HQ2",log:"Port of Virginia; Dulles International; I-95, I-81, I-64"},
+WV:{n:"West Virginia",c:[3,0],pop:1.8,lf:0.78,kwh:7.6,pos:"Steel, chemicals and aerospace within a day's drive of the Northeast.",sec:["Steel and metals","Chemicals","Aerospace","Energy"],anc:"Nucor Steel, Toyota (Buffalo), Form Energy, Pratt & Whitney",log:"I-64, I-77, I-79; Ohio River; CSX and Norfolk Southern"},
+DC:{n:"District of Columbia",c:[6,0],pop:0.68,lf:0.40,kwh:10.5,pos:"Federal agencies, embassies and professional services.",sec:["Professional services","Technology","Policy and associations","Hospitality"],anc:"Federal government, international institutions, universities",log:"Reagan National and Dulles; Amtrak Northeast Corridor"}
+};
+const SITES=[
+["Tennessee River Megasite","AL",1250,1,1,"I-65, 6 mi"],["Delta Rail Park","AR",640,1,1,"I-40, 3 mi"],["Space Coast Commerce Park","FL",310,0,1,"I-95, 2 mi"],
+["Coastal Empire Megasite","GA",2100,1,1,"I-16, 1 mi"],["Bluegrass Station Site","KY",480,1,0,"I-64, 4 mi"],["River Parishes Industrial Site","LA",900,1,1,"I-10, 8 mi"],
+["Golden Triangle North","MS",1400,1,1,"US-82, 1 mi"],["Piedmont Technology Site","NC",560,0,1,"I-85, 2 mi"],["Red River Aerospace Park","OK",220,0,0,"I-35, 5 mi"],
+["Upstate Advanced Manufacturing Site","SC",730,1,1,"I-85, 3 mi"],["West Tennessee Supplier Park","TN",350,1,1,"I-40, 2 mi"],["Blue Ridge Commerce Center","VA",150,0,1,"I-81, 1 mi"]];
+const $=id=>document.getElementById(id), keys=Object.keys(S);
+let cur="TN", layer="none";
+const LAY={none:"None",pop:"Population",lf:"Labor force",kwh:"Power cost"};
+function tiles(){
+  const t=$("tiles");t.innerHTML="";
+  const max={pop:30.5,lf:15.1,kwh:10.5};
+  keys.forEach(k=>{const s=S[k],b=document.createElement("button");
+    b.className="tile"+(s.w?" wide":"")+(k===cur?" on":"");
+    b.style.gridColumn=(s.c[0]+1)+(s.w?" / span 2":"");b.style.gridRow=s.c[1]+1;
+    if(layer!=="none"&&k!==cur){const v=s[layer]/max[layer];b.style.background=`rgba(14,140,140,${.25+.75*v})`;}
+    b.innerHTML=k+(layer==="none"?"":`<small>${s[layer]}${layer==="kwh"?"¢":"M"}</small>`);
+    b.setAttribute("aria-label",s.n);b.onclick=()=>{cur=k;tiles();profile();};t.appendChild(b);});
+  const L=$("layers");L.innerHTML="<span class='note' style='align-self:center'>Shade by:</span>";
+  Object.keys(LAY).forEach(l=>{const c=document.createElement("button");c.className="chip"+(l===layer?" on":"");c.textContent=LAY[l];c.onclick=()=>{layer=l;tiles();};L.appendChild(c);});
+}
+function profile(){const s=S[cur],n=SITES.filter(x=>x[1]===cur).length;
+  $("profile").innerHTML=`<div class="eyebrow" style="color:var(--teal)">State profile</div><h3>${s.n}</h3><p class="pos">${s.pos}</p>
+  <div class="stats"><div class="stat"><b>${s.pop}M</b><span>Population</span></div><div class="stat"><b>${s.lf}M</b><span>Labor force</span></div><div class="stat"><b>${s.kwh}¢</b><span>Industrial power, per kWh</span></div></div>
+  <div class="lbl">Leading sectors</div><div class="tags">${s.sec.map(x=>`<span class="tag">${x}</span>`).join("")}</div>
+  <div class="lbl">Anchor employers and assets</div><p>${s.anc}</p>
+  <div class="lbl">Logistics</div><p>${s.log}</p>
+  <div class="src">Indicative figures for the concept. Live values: US Census Bureau, BLS and EIA, with the release date shown.</div>
+  <div class="row"><a class="btn sm" href="#sites" onclick="$('fstate').value='${cur}';sites()">Featured sites (${n})</a><a class="btn sm line" href="#compare" onclick="$('c1').value='${cur}';bars()">Compare</a><a class="btn sm line" href="#connect" onclick="$('inqstate').value='${s.n}'">Contact the state team</a></div>`;}
+function opts(){["c1","c2","c3"].forEach((id,i)=>{$(id).innerHTML=(i===2?"<option value=''>Add a third state</option>":"")+keys.map(k=>`<option value="${k}">${S[k].n}</option>`).join("");});
+  $("c1").value="TN";$("c2").value="GA";$("c3").value="";
+  $("fstate").innerHTML+=[...new Set(SITES.map(x=>x[1]))].map(k=>`<option value="${k}">${S[k].n}</option>`).join("");
+  $("inqstate").innerHTML+=keys.map(k=>`<option>${S[k].n}</option>`).join("");
+  ["c1","c2","c3"].forEach(id=>$(id).onchange=bars);["fstate","facres","frail","fcert"].forEach(id=>$(id).onchange=sites);}
+function bars(){const sel=[...new Set(["c1","c2","c3"].map(id=>$(id).value).filter(Boolean))];
+  const M=[["pop","Population (millions)","M"],["lf","Labor force (millions)","M"],["kwh","Industrial electricity (cents per kWh)","¢"]];
+  $("bars").innerHTML=M.map(([f,t,u])=>{const mx=Math.max(...sel.map(k=>S[k][f]));
+    return `<div class="metric"><h4>${t}</h4>${sel.map(k=>`<div class="bar"><span>${S[k].n}</span><div class="track"><div class="fill" style="width:${S[k][f]/mx*100}%"></div></div><b>${S[k][f]}${u}</b></div>`).join("")}</div>`}).join("");}
+function sites(){const st=$("fstate").value,ac=+$("facres").value,r=$("frail").checked,c=$("fcert").checked;
+  const L=SITES.filter(x=>(!st||x[1]===st)&&x[2]>=ac&&(!r||x[3])&&(!c||x[4]));
+  $("fcount").textContent=L.length+" of "+SITES.length+" sample sites";
+  $("sitelist").innerHTML=L.map(x=>`<div class="site"><div class="ph"><span>${S[x[1]].n}</span>${x[4]?'<span class="badge">Certified</span>':''}</div><div class="bd"><h3>${x[0]}</h3><dl><dt>Acres</dt><dd>${x[2].toLocaleString()}</dd><dt>Rail</dt><dd>${x[3]?"Served":"Not served"}</dd><dt>Highway</dt><dd>${x[5]}</dd><dt>Record</dt><dd><a href="#sites">State database listing</a> (sample)</dd></dl></div></div>`).join("")||"<p class='note'>No sample sites match. Clear a filter.</p>";}
+// Scripted demo assistant: answers only from the data on this page.
+function answer(q){const t=q.toLowerCase();
+  const named=keys.filter(k=>t.includes(S[k].n.toLowerCase()));
+  if(/spacecom|london|event|mission/.test(t))return "SEDC will be at SpaceCom in London on February 24 and 25, 2027, in the American Pavilion. Use the Connect form to request a meeting with the delegation.";
+  if(/site|acre|rail|megasite|certified/.test(t)){const m=t.match(/(\d[\d,]*)\s*\+?\s*acre/),min=m?+m[1].replace(/,/g,""):0,r=/rail/.test(t);
+    let L=SITES.filter(x=>x[2]>=min&&(!r||x[3])&&(!named.length||named.includes(x[1])));
+    return L.length?"Sample sites that match"+(min?" ("+min+"+ acres"+(r?", rail served":"")+")":"")+":\n"+L.slice(0,6).map(x=>"• "+x[0]+", "+S[x[1]].n+", "+x[2].toLocaleString()+" acres").join("\n")+"\nSee Sites and Properties for filters.":"No sample sites match that. I can pass your requirements to the SEDC team through the Connect form.";}
+  if(/electric|power|energy|kwh/.test(t)){const L=[...keys].sort((a,b)=>S[a].kwh-S[b].kwh).slice(0,4);return "Lowest indicative industrial electricity prices in this demo:\n"+L.map(k=>"• "+S[k].n+": "+S[k].kwh+"¢ per kWh").join("\n")+"\nLive figures come from the US Energy Information Administration.";}
+  if(/compare|versus| vs /.test(t)&&named.length>=2)return named.slice(0,3).map(k=>S[k].n+": population "+S[k].pop+"M, labor force "+S[k].lf+"M, power "+S[k].kwh+"¢").join("\n")+"\nOpen the Compare tool for charts.";
+  if(named.length){const s=S[named[0]];return s.n+": "+s.pos+"\nLeading sectors: "+s.sec.join(", ")+".\nAnchors: "+s.anc+".";}
+  const sec=keys.filter(k=>S[k].sec.some(x=>x.toLowerCase().split(/[ ,]+/).some(w=>w.length>4&&t.includes(w.slice(0,6)))));
+  if(sec.length)return "States in this demo with that sector among their leading sectors:\n"+sec.slice(0,7).map(k=>"• "+S[k].n).join("\n");
+  return "I can only answer from SEDC-approved content, and that question is outside it. I will pass it to the SEDC team if you leave your details in the Connect form.";}
+function say(c,t){const d=document.createElement("div");d.className="msg "+c;d.textContent=t;$("log").appendChild(d);$("log").scrollTop=1e6;}
+function ask(q){if(!q.trim())return;say("u",q);setTimeout(()=>say("a",answer(q)),250);}
+function togglePanel(){$("panel").classList.toggle("open");if(!$("log").children.length)say("a","Hello. I answer questions about the American South from the content on this site. This is a scripted demo with indicative data.");}
+$("askform").onsubmit=e=>{e.preventDefault();ask($("q").value);$("q").value="";};
+["Which states have certified sites over 500 acres with rail?","Where is industrial power cheapest?","Tell me about Tennessee","Compare Georgia and South Carolina"].forEach(s=>{const b=document.createElement("button");b.textContent=s;b.onclick=()=>ask(s);$("sugg").appendChild(b);});
+function count(){document.querySelectorAll("[data-count]").forEach(el=>{const n=+el.dataset.count;let i=0;const t=setInterval(()=>{i+=Math.ceil(n/30);if(i>=n){i=n;clearInterval(t);}el.textContent=i;},25);});}
+tiles();profile();opts();bars();sites();count();
+</script>
+</body>
+</html>
